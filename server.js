@@ -10,15 +10,15 @@ server.get('/', () => {
 
 server.post('/carro', (request, reply) => {
 // Acessando dados do corpo da requisição
-    const {cor, modelo, marca} = request.body
+    const {nome, ingredientes, preço} = request.body
 // Exibindo dados
 //    console.log(body)
    
     // return 'cadastrar'
     database.create({
-        cor: cor,
-        amodelo: modelo,
-        marca: marca,
+        nome: nome,
+        ingredientes: ingredientes,
+        preço: preço,
     })
 
     return reply.status(201).send
@@ -34,11 +34,11 @@ server.get('/carro', (request) => {
 
 server.put('/carros/:id', (request, reply) => {
     const carroId = request.params.id
-    const {cor, modelo, marca} = request.body
+    const {nome, ingredientes, preço} = request.body
     const carro = database.update(carroId, {
-        cor: cor,
-        amodelo: modelo,
-        marca: marca,
+        nome: nome,
+        ingredientes: ingredientes,
+        preço: preço,
     })
     return reply.status(204).send()
 })
