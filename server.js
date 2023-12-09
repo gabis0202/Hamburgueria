@@ -8,7 +8,7 @@ server.get('/', () => {
     return 'Rota padrão'
 })
 
-server.post('/carro', (request, reply) => {
+server.post('/hamburguer', (request, reply) => {
 // Acessando dados do corpo da requisição
     const {nome, ingredientes, preço} = request.body
 // Exibindo dados
@@ -24,18 +24,18 @@ server.post('/carro', (request, reply) => {
     return reply.status(201).send
 })
 
-server.get('/carro', (request) => {
+server.get('/hamburguer', (request) => {
     const search = request.query.search
     console.log(search)
-    const carros = database.list(search)
-    console.log(carros)
-    return carros
+    const hamburguers = database.list(search)
+    console.log(hamburguers)
+    return hamburguers
 })
 
-server.put('/carros/:id', (request, reply) => {
+server.put('/hamburguers/:id', (request, reply) => {
     const carroId = request.params.id
     const {nome, ingredientes, preço} = request.body
-    const carro = database.update(carroId, {
+    const hamburguer = database.update(hamburguerId, {
         nome: nome,
         ingredientes: ingredientes,
         preço: preço,
@@ -43,10 +43,10 @@ server.put('/carros/:id', (request, reply) => {
     return reply.status(204).send()
 })
 
-server.delete('/carros/:id', (request, reply) => {
-    const carroId = request.params.id
+server.delete('/hamburguers/:id', (request, reply) => {
+    const hamburguerId = request.params.id
 
-    database.delete(carroId)
+    database.delete(hamburguerId)
 
     return reply.status(204).send()
 }) 
