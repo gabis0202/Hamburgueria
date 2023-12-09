@@ -1,0 +1,30 @@
+POST http://localhost:3333/carro
+Content-Type: application/json
+
+{
+    "cor": "",
+    "modelo": "",
+    "marca": ""
+}
+
+###
+
+GET http://localhost:3333/carro
+###
+
+GET http://localhost:3333/carro?search=IFMS
+
+###
+
+PUT http://localhost:3333/carros/f43a9a30-83e3-4206-b193-0189e49b5009
+Content-Type: application/json
+
+{
+    "cor": "",
+    "marca": "",
+    "modelo": ""
+}
+
+###
+
+DELETE http://localhost:3333/carros/
