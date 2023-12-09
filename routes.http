@@ -1,4 +1,4 @@
-POST http://localhost:3333/carro
+POST http://localhost:3333/hamburguer
 Content-Type: application/json
 
 {
@@ -9,14 +9,14 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3333/carro
+GET http://localhost:3333/hamburguer
 ###
 
-GET http://localhost:3333/carro?search=IFMS
+GET http://localhost:3333/hamburguer?search=IFMS
 
 ###
 
-PUT http://localhost:3333/carros/f43a9a30-83e3-4206-b193-0189e49b5009
+PUT http://localhost:3333/hamburguers/f43a9a30-83e3-4206-b193-0189e49b5009
 Content-Type: application/json
 
 {
@@ -27,4 +27,4 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3333/carros/
+DELETE http://localhost:3333/hamburguers/
