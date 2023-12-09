@@ -33,7 +33,7 @@ server.get('/hamburguer', (request) => {
 })
 
 server.put('/hamburguers/:id', (request, reply) => {
-    const carroId = request.params.id
+    const hamburguerId = request.params.id
     const {nome, ingredientes, preço} = request.body
     const hamburguer = database.update(hamburguerId, {
         nome: nome,
