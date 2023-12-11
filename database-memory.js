@@ -1,13 +1,13 @@
 import { randomUUID } from "crypto"
 
 export class DatabaseMemory{
-#hamburguers = new Map()
+#hamburgueres = new Map()
 
 list(search){
-    return Array.from(this.#hamburguers.entries()).map((hamburguersArray) =>{
+    return Array.from(this.#hamburgueres.entries()).map((hamburgueresArray) =>{
     // acessando primeira posição
-        const id = hamburguersArray[0]
-        const data = hamburguersArray[1]
+        const id = hamburgueresArray[0]
+        const data = hamburgueresArray[1]
 
         return{
             id,
@@ -16,19 +16,19 @@ list(search){
     })
     .filter(hamburguer => {
         if (search){
-            return hamburguer.titulo.includes(search)
+            return hamburguer.nome.includes(search)
         }
         return true
     })
 }
 create(hamburguer){
     const hamburguerId = randomUUID()
-    this.#hamburguers.set(hamburguerId, hamburguer)
+    this.#hamburgueres.set(hamburguerId, hamburguer)
 }
 update(id, hamburguer){
-    this.#hamburguers.set(id, hamburguer)
+    this.#hamburgueres.set(id, hamburguer)
 }
 delete(id, hamburguer){
-    this.#hamburguers.delete(id, hamburguer)
+    this.#hamburgueres.delete(id, hamburguer)
 }
 }
