@@ -2,29 +2,30 @@ POST http://localhost:3333/hamburguer
 Content-Type: application/json
 
 {
-    "nome": "',
-    "ingredientes": "",
-    "preço": "",
+    "nome": "Hambúrguer Duplo",
+    "tipo_pao": "Pão de Leite",
+    "preco": "R$ 20,00"
 }
 
 ###
 
 GET http://localhost:3333/hamburguer
+
 ###
 
 GET http://localhost:3333/hamburguer?search=IFMS
 
 ###
 
-PUT http://localhost:3333/hamburguers/f43a9a30-83e3-4206-b193-0189e49b5009
+PUT http://localhost:3333/hamburgueres/f43a9a30-83e3-4206-b193-0189e49b5009
 Content-Type: application/json
 
 {
-    "nome": "',
-    "ingredientes": "",
-    "preço": "",
+    "nome": "Hambúrguer Vegetariano",
+    "tipo-pao": "Pão 5 Grãos",
+    "preco": "R$ 15,00"
 }
 
 ###
 
-DELETE http://localhost:3333/hamburguers/
+DELETE http://localhost:3333/hamburgueres/f43a9a30-83e3-4206-b193-0189e49b5009
