@@ -10,15 +10,15 @@ server.get('/', () => {
 
 server.post('/hamburguer', (request, reply) => {
 // Acessando dados do corpo da requisição
-    const {nome, ingredientes, preço} = request.body
+    const {nome, tipo_pao, preco} = request.body
 // Exibindo dados
 //    console.log(body)
    
     // return 'cadastrar'
     database.create({
         nome: nome,
-        ingredientes: ingredientes,
-        preço: preço,
+        tipo_pao: tipo_pao,
+        preco: preco,
     })
 
     return reply.status(201).send
@@ -27,23 +27,23 @@ server.post('/hamburguer', (request, reply) => {
 server.get('/hamburguer', (request) => {
     const search = request.query.search
     console.log(search)
-    const hamburguers = database.list(search)
-    console.log(hamburguers)
-    return hamburguers
+    const hamburgueres = database.list(search)
+    console.log(hamburgueres)
+    return hamburgueres
 })
 
-server.put('/hamburguers/:id', (request, reply) => {
+server.put('/hamburgueres/:id', (request, reply) => {
     const hamburguerId = request.params.id
-    const {nome, ingredientes, preço} = request.body
+    const {nome, tipo_pao, preco} = request.body
     const hamburguer = database.update(hamburguerId, {
         nome: nome,
-        ingredientes: ingredientes,
-        preço: preço,
+        tipo_pao: tipo_pao,
+        preco: preco,
     })
     return reply.status(204).send()
 })
 
-server.delete('/hamburguers/:id', (request, reply) => {
+server.delete('/hamburgueres/:id', (request, reply) => {
     const hamburguerId = request.params.id
 
     database.delete(hamburguerId)
